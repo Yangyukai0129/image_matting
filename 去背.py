@@ -2,7 +2,7 @@ import cv2
 
 name = 'LOGO'
 
-img = cv2.imread(f'E:\\project\\python\\image_matting\\{name}.png', cv2.IMREAD_UNCHANGED)  # 開啟圖片
+img = cv2.imread(f'./image/{name}.png', cv2.IMREAD_UNCHANGED)  # 開啟圖片
 img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)         # 因為是 jpg，要轉換顏色為 BGRA
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)        # 新增 gray 變數為轉換成灰階的圖片
 
@@ -17,4 +17,4 @@ for x in range(w):
             # 如果該像素的灰階度大於 200，調整該像素的透明度
             # 使用 255 - gray[y, x] 可以將一些邊緣的像素變成半透明，避免太過鋸齒的邊緣
 
-cv2.imwrite(f'E:\\project\\python\\image_matting\\{name}_matting.png', img)    # 存檔儲存為 png
+cv2.imwrite(f'./image/{name}_matting.png', img)    # 存檔儲存為 png
